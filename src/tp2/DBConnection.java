@@ -5,25 +5,28 @@ import java.sql.SQLException;
 
 public class DBConnection {
 	   
-		String BDD = "nomBD";
-		String url = "jdbc:mysql://localhost:3306/" + BDD;
-		String user = "root";
-		String passwd = "";
-	    private static Connection conn;
+		private String BDD = "nomBD";
+		private String url = "jdbc:mysql://localhost:3306/" + BDD;
+		private String user = "root";
+		private String passwd = "";
+	    private Connection conn;
+		private static DBConnection DBConn;
 
 	   
-	    private DBConnection() throws SQLException {
-	    	conn=DriverManager.getConnection(url, user,passwd);
-		}
+	    private DBConnection() {}
 
 	    
-	    public static Connection getConn() throws SQLException{
-	    		
-	    	if(conn == null) {
-	    		new DBConnection();
-	    	}
-	    	
+	    public Connection getConn() throws SQLException {
+			conn=DriverManager.getConnection(url, user,passwd);
 			return conn;
+		}
+
+		public static DBConnection getInstance(){
+			if(DBConn == null){
+				DBConn = new DBConnection();
+			}
+
+			return DBConn;
 		}
 
 

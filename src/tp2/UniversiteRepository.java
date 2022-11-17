@@ -10,8 +10,8 @@ public class UniversiteRepository {
 	
 	Universite GetById(int universityId) throws SQLException {
 		
-		
-		Connection connect=DBConnection.getConn(); 
+		DBConnection DB = DBConnection.getInstance();
+		Connection connect = DB.getConn(); 
 		Statement stmt = connect.createStatement();
 		System.out.println("LogBD : début recherche de id université dans la base de donnée");
 		
@@ -23,7 +23,7 @@ public class UniversiteRepository {
 			
 		System.out.println("LogBD : université récupérée");
 		
-		//connect.close();
+		connect.close();
 		return u;	
 	
 		

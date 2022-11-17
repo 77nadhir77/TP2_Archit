@@ -10,8 +10,8 @@ public class EtudiantRepository {
 	void add(Etudiant E) throws SQLException
 	{
 
-		
-		Connection connect= DBConnection.getConn();
+		DBConnection DB = DBConnection.getInstance();
+		Connection connect= DB.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "INSERT into etudiant values (" + E.getMatricule() + ",'" + E.getNom() + "','" + E.getPrenom() + "','" + E.getEmail() + "'," +E.getNbLivreMensuel_Autorise() + "," +E.getNbLivreEmprunte() + "," +E.getId_universite()+")";
@@ -22,14 +22,14 @@ public class EtudiantRepository {
 			}else if (rs == 0){
 				System.out.println("log : Echec de l'ajout dans la BD de l'�tudiant  du Matricule" + E.getMatricule());
 			}
-//		connect.close();
+		connect.close();
 	 }
 
 
 	boolean Exists(String email) throws SQLException	
 	{
-		
-		Connection connect=DBConnection.getConn();
+		DBConnection DB = DBConnection.getInstance();
+		Connection connect= DB.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where email='"+ email+"'";
@@ -37,18 +37,18 @@ public class EtudiantRepository {
 		
 		if (rs){
 			System.out.println("logBD--- :email existe dans la BD  " + email);
-//			connect.close();
+			connect.close();
 			return true;
 			}
 		System.out.println("logBD--- : email n'existe pas " + email);	
-//		connect.close();
+		connect.close();
 		return false;
 	}
 	
 	boolean Exists(int mat) throws SQLException	
 	{
-		 
-		Connection connect=DBConnection.getConn();
+		 DBConnection DB = DBConnection.getInstance();
+		Connection connect=DB.getConn();
 		
 		Statement stmt = connect.createStatement();
 		String sql = "select * from etudiant where matricule="+ mat;
@@ -56,11 +56,11 @@ public class EtudiantRepository {
 		
 		if (rs){
 			System.out.println("logBD--- :etudiant avec ce matricule existe déja dans la BD  " + mat);
-//			connect.close();
+			connect.close();
 			return true;
 			}
 		System.out.println("logBD----: etudiant avec ce matricule n'existe pas " + mat);	
-//		connect.close();
+		connect.close();
 		return false;
 	}
 
