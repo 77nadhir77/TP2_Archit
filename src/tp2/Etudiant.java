@@ -1,3 +1,4 @@
+package tp2;
 
 public class Etudiant {
 
