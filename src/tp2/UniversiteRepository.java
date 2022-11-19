@@ -5,10 +5,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UniversiteRepository {
+public class UniversiteRepository implements IUniversiteRepository{
 	
 	
-	Universite GetById(int universityId) throws SQLException {
+	public IUniversite GetById(int universityId) throws SQLException {
 		
 		DBConnection DB = DBConnection.getInstance();
 		Connection connect = DB.getConn(); 
@@ -19,7 +19,7 @@ public class UniversiteRepository {
 		ResultSet rs = stmt.executeQuery(sql);
 		rs.next();	
 		TypePackage p=TypePackage.valueOf(rs.getString(3));
-		Universite u = new Universite (rs.getInt(1),rs.getString(2),p);
+		IUniversite u = new Universite (rs.getInt(1),rs.getString(2),p);
 			
 		System.out.println("LogBD : université récupérée");
 		
