@@ -5,8 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UniversiteRepository{
-	
+public class UniversiteRepository implements IUniversiteRepository{
+	 
 	
 	public Universite GetById(int universityId) throws SQLException {
 		
