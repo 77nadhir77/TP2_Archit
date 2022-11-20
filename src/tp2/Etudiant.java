@@ -1,6 +1,6 @@
 package tp2;
 
-public class Etudiant implements IEtudiant{
+public class Etudiant {
 
 		private int matricule;
 	    private String nom;

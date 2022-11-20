@@ -1,6 +1,6 @@
 package tp2;
 
-public class Universite implements IUniversite{
+public class Universite{
 
  private int i_univ; //identifiant unique de l'universit�
  private String nom;

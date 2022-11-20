@@ -4,10 +4,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EtudiantRepository implements IEtudiantRepository {
+public class EtudiantRepository{
 		
 	
-	public void add(IEtudiant E) throws SQLException
+	public void add(Etudiant E) throws SQLException
 	{
 
 		DBConnection DB = DBConnection.getInstance();

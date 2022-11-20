@@ -10,10 +10,10 @@ public class EtudiantService {
 	
 	boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
 	{
-		IEtudiantRepository StudRep= new EtudiantRepository();
-	    IUniversiteRepository UnivRep= new UniversiteRepository();
-	    IEtudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
-	    IUniversite univ=UnivRep.GetById(id_universite);
+		EtudiantRepository StudRep= new EtudiantRepository();
+	    UniversiteRepository UnivRep= new UniversiteRepository();
+	    Etudiant stud = new Etudiant(matricule, nom, prenom, email,pwd,id_universite);
+	    Universite univ=UnivRep.GetById(id_universite);
 	    
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 	    
@@ -53,13 +53,13 @@ public class EtudiantService {
 	
 	
 
-	public ArrayList<IEtudiant> GetEtudiantParUniversitye()
+	public ArrayList<Etudiant> GetEtudiantParUniversitye()
 	{
 	    //...
 		return new ArrayList<>(4);
 	}
 	
-	public ArrayList<IEtudiant> GetEtudiatparLivreEmprunte()
+	public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
 	{
 	    //...
 		return new ArrayList<>(4);
