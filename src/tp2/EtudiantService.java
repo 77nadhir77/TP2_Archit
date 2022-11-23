@@ -8,16 +8,20 @@ import java.util.ArrayList;
 public class EtudiantService {
 	
 	public IJournal journal;
+	IEtudiantRepository StudRep;
+	IUniversiteRepository UnivRep;
 
 
-	public EtudiantService(IJournal journal){
+	public EtudiantService(IJournal journal, IEtudiantRepository StudRep, IUniversiteRepository UnivRep){
 		this.journal = journal;
+		this.StudRep= StudRep;
+	    this.UnivRep= UnivRep;
+		
 	}
 	
 	boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_universite) throws SQLException	
 	{
-		IEtudiantRepository StudRep= new EtudiantRepository(journal);
-	    IUniversiteRepository UnivRep= new UniversiteRepository(journal);
+		
 	    Etudiant stud = new Etudiant(matricule, nom, prenom, email, pwd, id_universite);
 	    Universite univ=UnivRep.GetById(id_universite);
 	    
@@ -58,13 +62,32 @@ public class EtudiantService {
 	    
 		
 	}
+
+
+	public void ajouterBonus(int id) throws SQLException{
+
+		Universite univ = UnivRep.GetById(id);
+
+		ArrayList<Etudiant> listEtudiant = GetEtudiantParUniversite();
+
+		if(univ.getPack() == TypePackage.Standard){
+			for(Etudiant e : listEtudiant){
+				e.setBonus(5);
+			}
+		}else{
+			for(Etudiant e : listEtudiant){
+				e.setBonus(10);
+			}
+		}
+
+	}
 	
 	
 	
 
 	public ArrayList<Etudiant> GetEtudiantParUniversite()
 	{
-	    //...
+		//..
 		return new ArrayList<>(4);
 	}
 	

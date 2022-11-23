@@ -102,6 +102,10 @@ public class Etudiant {
 			this.pwd = pwd;
 		}
 
+		public void setBonus(int b){
+			this.nbLivreMensuel_Autorise += b; 
+		}
+
 
 		
 		
