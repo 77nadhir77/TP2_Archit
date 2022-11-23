@@ -45,5 +45,20 @@ public class UniversiteRepository implements IUniversiteRepository{
 	
 		
 	}	
+
+
+
+
+	public int NbrLivreAutorise(Universite univ){
+
+		if(univ.getPack() == TypePackage.Standard){
+			return 10;
+		}else if(univ.getPack() == TypePackage.Premium){
+			return 20;
+		}else{
+			return 0;
+		}
+		
+	}
 	
 }

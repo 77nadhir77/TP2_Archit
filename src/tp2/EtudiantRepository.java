@@ -93,4 +93,11 @@ public class EtudiantRepository implements IEtudiantRepository{
 		return false;
 	}
 
+
+
+
+	public boolean emailMatVerification(Etudiant E) throws SQLException{
+		return this.Exists(E.getEmail()) || this.Exists(E.getMatricule()) || E.getEmail().length() == 0 || E.getEmail() == null;
+	}
+
 }

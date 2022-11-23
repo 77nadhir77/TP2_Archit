@@ -29,7 +29,5 @@ public class DBConnection implements IDBConnection{
 			return DBConn;
 		}
 
-
-		
 	
 }

@@ -18,8 +18,8 @@ public class MainApp {
 		try {
 			serv.inscription(2, "Guendouziiiii", "wassila", "guen@gmail.com","xxxx", 123);
 			serv.inscription(3, "NACEF", "Nadhir", "nnacef877@gmail.com", "xxxx", 2);
-			serv.inscription(4, "slimani", "Mehdi", "didoslimani10@gmail.com", "xxxx", 2);
-			
+			serv.inscription(4, "slimani", "Mehdi", "didoslimani19@gmail.com", "xxxx", 2);
+			serv.inscription(5, "Salmi", "Rafik", "rafik@gmail.com", "xxxx", 123);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
