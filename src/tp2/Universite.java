@@ -2,9 +2,9 @@ package tp2;
 
 public class Universite{
 
- private int i_univ; //identifiant unique de l'universit�
- private String nom;
- private TypePackage pack;
+	private int i_univ; //identifiant unique de l'universit�
+	private String nom;
+	private TypePackage pack;
  
 	public Universite(int i_univ, String nom, TypePackage pack) {
 	super();
