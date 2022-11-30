@@ -71,12 +71,16 @@ public class EtudiantService {
 		ArrayList<Etudiant> listEtudiant = GetEtudiantParUniversite();
 
 		if(univ.getPack() == TypePackage.Standard){
+			Package p = new StandardPack();
+
 			for(Etudiant e : listEtudiant){
-				e.setBonus(5);
+				p.augumenterNombreDeLivre(e);
 			}
-		}else{
+		}else if(univ.getPack() == TypePackage.Premium){
+			Package p = new PremiumPack();
+			
 			for(Etudiant e : listEtudiant){
-				e.setBonus(10);
+				p.augumenterNombreDeLivre(e);
 			}
 		}
 

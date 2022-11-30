@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 public class UniversiteRepository implements IUniversiteRepository{
 	 
 	public IJournal journal;
@@ -46,15 +47,17 @@ public class UniversiteRepository implements IUniversiteRepository{
 		
 	}	
 
-
-
-
 	public int NbrLivreAutorise(Universite univ){
 
 		if(univ.getPack() == TypePackage.Standard){
-			return 10;
+			Package p = new StandardPack();
+			int nombreDeLivre = p.avoirNombreDelivreAutorise();
+			return nombreDeLivre;
+
 		}else if(univ.getPack() == TypePackage.Premium){
-			return 20;
+			Package p = new PremiumPack();
+			int nombreDeLivre = p.avoirNombreDelivreAutorise();
+			return nombreDeLivre;
 		}else{
 			return 0;
 		}
