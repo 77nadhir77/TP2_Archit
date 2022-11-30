@@ -69,19 +69,11 @@ public class EtudiantService {
 		Universite univ = UnivRep.GetById(id);
 
 		ArrayList<Etudiant> listEtudiant = GetEtudiantParUniversite();
-
-		if(univ.getPack() == TypePackage.Standard){
-			Package p = new StandardPack();
-
-			for(Etudiant e : listEtudiant){
-				p.augumenterNombreDeLivre(e);
-			}
-		}else if(univ.getPack() == TypePackage.Premium){
-			Package p = new PremiumPack();
-			
-			for(Etudiant e : listEtudiant){
-				p.augumenterNombreDeLivre(e);
-			}
+		AbstractFactory aFactory = new PackageCreator();
+		Package p = aFactory.getPackageMode(univ.getPack());
+		
+		for(Etudiant e : listEtudiant){
+			p.augumenterNombreDeLivre(e);
 		}
 
 	}

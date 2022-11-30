@@ -49,18 +49,9 @@ public class UniversiteRepository implements IUniversiteRepository{
 
 	public int NbrLivreAutorise(Universite univ){
 
-		if(univ.getPack() == TypePackage.Standard){
-			Package p = new StandardPack();
-			int nombreDeLivre = p.avoirNombreDelivreAutorise();
-			return nombreDeLivre;
-
-		}else if(univ.getPack() == TypePackage.Premium){
-			Package p = new PremiumPack();
-			int nombreDeLivre = p.avoirNombreDelivreAutorise();
-			return nombreDeLivre;
-		}else{
-			return 0;
-		}
+		AbstractFactory aFactory = new PackageCreator();
+		Package p = aFactory.getPackageMode(univ.getPack());
+		return p.avoirNombreDelivreAutorise(); 
 		
 	}
 	
