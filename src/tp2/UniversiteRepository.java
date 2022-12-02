@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 
 public class UniversiteRepository implements IUniversiteRepository{
-	 
+ 
 	public IJournal journal;
-
+	
 	public UniversiteRepository(IJournal journal){
 		this.journal = journal;
 	}
