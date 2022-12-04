@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 
 public class ControleurInscription{
-    private ViewInscription viewInscription;
+    private IViewInscription viewInscription;
     private EtudiantService etudiantService;
 
 
-    public ControleurInscription(ViewInscription viewInscription, EtudiantService etudiantService){
+    public ControleurInscription(IViewInscription viewInscription, EtudiantService etudiantService){
         this.viewInscription = viewInscription;
         this.etudiantService = etudiantService;
 

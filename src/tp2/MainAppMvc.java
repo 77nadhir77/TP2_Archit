@@ -1,8 +1,7 @@
 package tp2;
 
 
-
-public class MainApp {
+public class MainAppMvc {
 
 	public static void main(String[] args){
 
@@ -19,17 +18,11 @@ public class MainApp {
 		IEtudiantRepository StudRep = new EtudiantRepository(journalComposite);
 
 		EtudiantService serv=new EtudiantService(journalComposite, StudRep, UnivRep);
-		try {
-			serv.inscription(2, "Guendouziiiii", "wassila", "guen@gmail.com","xxxx", 123);
-			serv.inscription(3, "NACEF", "Nadhir", "nnacef877@gmail.com", "xxxx", 2);
-			serv.inscription(4, "slimani", "Mehdi", "didoslimani19@gmail.com", "xxxx", 2);
-			serv.inscription(5, "Salmi", "Rafik", "rafik@gmail.com", "xxxx", 123);
 
-			serv.ajouterBonus(2);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+		IViewInscription viewInscription = new ViewInscription();
+		ControleurInscription controleurInscription = new ControleurInscription(viewInscription, serv);
+		
 
 
 	}
