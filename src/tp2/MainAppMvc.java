@@ -1,5 +1,17 @@
 package tp2;
 
+import tp2.Controller.ControleurInscription;
+import tp2.Controller.IViewInscription;
+import tp2.Journal.Journal1;
+import tp2.Journal.Journal2;
+import tp2.Journal.Journal3;
+import tp2.Journal.JournalComposite;
+import tp2.Repository.EtudiantRepository;
+import tp2.Repository.UniversiteRepository;
+import tp2.ServiceEtudiant.EtudiantService;
+import tp2.ServiceEtudiant.IEtudiantRepository;
+import tp2.ServiceEtudiant.IUniversiteRepository;
+import tp2.View.ViewInscription;
 
 public class MainAppMvc {
 

@@ -5,3 +5,10 @@ logBD--- : email n'existe pas amine@gmal.com
 logBD----: etudiant avec ce matricule n'existe pas 6
 log : ajout dans la BD r?ussi de l'?tudiant  du Matricule 6
 Log: Fin de l'opération d'ajout de l'étudiant avec matricule 6
+LogBD : début recherche de id université dans la base de donnée
+LogBD : université récupérée
+Log: début de l'opération d'ajout de l'étudiant avec matricule 6
+logBD--- : email n'existe pas hi@gmail.com
+logBD----: etudiant avec ce matricule n'existe pas 6
+log : ajout dans la BD r?ussi de l'?tudiant  du Matricule 6
+Log: Fin de l'opération d'ajout de l'étudiant avec matricule 6
